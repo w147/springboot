@@ -16,7 +16,7 @@ public class GreetingController {
     private final AtomicLong counter = new AtomicLong();
 
     @Autowired
-    private UserService librarianService;
+    private UserService userService;
 
     @GetMapping("/greeting")
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
@@ -31,6 +31,6 @@ public class GreetingController {
     @GetMapping("/getUser")
     public User getALibrarianInfo(int id) {
         //System.out.println("test :id: "+id);
-        return librarianService.selectUser(id);
+        return userService.selectUser(id);
     }
 }

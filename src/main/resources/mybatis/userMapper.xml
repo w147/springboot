@@ -20,4 +20,9 @@
         where id = #{id,jdbcType=INTEGER}
     </select>
 
+    <insert id="save" parameterType="com.plaso.bean.User">
+        insert into user(name,age,address,description,test_id)
+        values(#{name}, #{age},#{address},#{description},#{test_id})
+    </insert>
+
 </mapper>
