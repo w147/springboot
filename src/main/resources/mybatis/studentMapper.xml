@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plaso.dao.StudentDao">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.plaso.bean.Student" id="UserMap">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="loginname" property="loginname" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectUser" parameterType="INTEGER" resultMap="UserMap">
+        select * from student where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <insert id="save" parameterType="com.plaso.bean.Student">
+        insert into student(id, name,loginname)
+        values(#{id},#{name}, #{loginname})
+    </insert>
+
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plaso.dao.User1Mapper">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.plaso.bean.User1" id="UserMap">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectByPrimaryKey" parameterType="INTEGER" resultMap="UserMap">
+        select * from user1 where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <insert id="insert" parameterType="com.plaso.bean.User1">
+        insert into user1(name) values(#{name})
+    </insert>
+
+</mapper>

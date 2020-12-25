@@ -12,6 +12,11 @@ public class User {
     private Timestamp createTime;
     private Timestamp updateTime;
 
+    public User(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
     public User(Long id, String name, int age, String address, String description, Long test_id, Timestamp createTime, Timestamp updateTime) {
         this.id = id;
         this.name = name;

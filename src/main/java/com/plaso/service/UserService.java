@@ -4,5 +4,5 @@ import com.plaso.bean.User;
 
 public interface UserService {
     User selectUser(int id);
-    Long saveUser(User user);
+    int saveUser(User user);
 }
